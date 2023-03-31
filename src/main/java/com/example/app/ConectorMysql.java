@@ -30,7 +30,7 @@ public class ConectorMysql {
     public String username = "root";
 
     // Clave de usuario
-    public String password = "perico21";
+    public String password = "password";
 
     public Connection conectarMySQL() {
         Connection conn = null;
@@ -39,6 +39,7 @@ public class ConectorMysql {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
+
 
             if (logger.isDebugEnabled()) {
                 e.printStackTrace();

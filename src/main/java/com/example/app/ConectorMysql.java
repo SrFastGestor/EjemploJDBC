@@ -1,10 +1,13 @@
-package com.example;
+package com.example.app;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-public class ConectorMysql {
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+public class ConectorMysql {
+    final static Logger logger = LogManager.getLogger("HelloWorld");
 
 
     // Librería de MySQL
@@ -36,7 +39,11 @@ public class ConectorMysql {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
+
+            if (logger.isDebugEnabled()) {
+                e.printStackTrace();
+            }
+            logger.error("Error de conexion, revisa los parametros de conexion.!");
         }
 
         return conn;

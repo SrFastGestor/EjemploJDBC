@@ -1,4 +1,4 @@
-package com.example;
+package com.example.app;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,6 +12,7 @@ public class App {
     // com.example.ConectorMysql conectorMysql = new com.example.ConectorMysql();
     final static Logger logger = LogManager.getLogger("HelloWorld");
     public static void main(String[] args) {
+
         ConectorMysql conectorMysql = new ConectorMysql();
 
         Connection connection;
